@@ -4,24 +4,28 @@ Proyecto 2, CC3074 Modelización y Simulación, Universidad del Valle de Guatema
 
 Fabian Prado (23427), Diego Sandoval (231977) y Yehosua Hercules (241452).
 
+Repositorio público: [yehosuah/proyecto-2-callcenter-uvg-2026](https://github.com/yehosuah/proyecto-2-callcenter-uvg-2026).
+
 El proyecto simula atención y abandono en un call-center bancario y busca una redistribución de capacidad mediante recocido simulado. Usa registros públicos de noviembre y diciembre de 1999 del banco anónimo documentado por Technion. La solución conserva 105 horas-agente **nominales** y aumenta la atención en un máximo de 120 segundos de 71,67% a 72,94% dentro del modelo: +1,27 puntos porcentuales, IC pareado del 95% [0,78; 1,76].
 
 La validación externa es parcial: el modelo subestima la espera media real en 16,44 s; el MAE por día es 23,41 s. La mejora es simulada, no una mejora observada en el banco. No hay reducción detectable del abandono ni de la espera total en la condición normal. Con demanda 20% menor empeora el abandono.
 
 ## Abrir la entrega
 
-- Informe: `output/pdf/informe_call_center.pdf`.
-- Word editable: `output/word/informe_call_center.docx`, Times New Roman 12, interlineado 1,5.
-- [Presentación editable](https://chatgpt.com/space/page_bfc0c11534e881918dd52bd4d84631d5).
-- Guion y defensa: `docs/GUION.md`.
-- Rúbrica y pendientes: `docs/ENTREGA.md`.
-- Contribuciones por confirmar: `docs/CONTRIBUCIONES.md`.
+- [Informe PDF](output/pdf/informe_call_center.pdf).
+- [Word editable](output/word/informe_call_center.docx), Times New Roman 12, interlineado 1,5.
+- [Presentación editable en Spaces](https://chatgpt.com/space/page_bfc0c11534e881918dd52bd4d84631d5); su acceso se administra por separado del repositorio.
+- [Guion y defensa](docs/GUION.md).
+- [Rúbrica y pendientes](docs/ENTREGA.md).
+- [Contribuciones por confirmar](docs/CONTRIBUCIONES.md).
 
 ## Ejecutar desde un entorno limpio
 
 Entorno probado: Python 3.9.6. Las versiones exactas de las dependencias directas están en `requirements-lock.txt`; para Python más reciente puede ser necesario usar los rangos de `requirements.txt`, y comprobar nuevamente la reproducción.
 
 ```bash
+git clone https://github.com/yehosuah/proyecto-2-callcenter-uvg-2026.git
+cd proyecto-2-callcenter-uvg-2026
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-lock.txt

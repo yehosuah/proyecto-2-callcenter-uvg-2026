@@ -1,5 +1,7 @@
 # Entrega del 10 de noviembre de 2026
 
+Repositorio publicado: [yehosuah/proyecto-2-callcenter-uvg-2026](https://github.com/yehosuah/proyecto-2-callcenter-uvg-2026). El código, los datos depurados, la evidencia y los informes están disponibles públicamente. El enlace de la presentación en Spaces mantiene permisos independientes.
+
 ## Evidencia frente a la rúbrica
 
 | Criterio | Evidencia preparada |
@@ -18,9 +20,8 @@
 
 1. Confirmar la aprobación docente del tema y que eventos discretos es una técnica vista en clase y recocido simulado corresponde al componente adicional.
 2. Completar contribuciones reales y regenerar el Word y PDF. No entregar la tabla pendiente como registro definitivo.
-3. Publicar el repositorio en GitHub y comprobar que el docente pueda acceder. Aún no hay un remoto publicado desde esta entrega.
-4. Enviar la notificación de uso solicitada por la fuente, usando el borrador de `FUENTES.md` después de revisarlo.
-5. Ensayar con cronómetro, ejecutar la demo sin internet y comprobar que todos puedan explicar el modelo y sus límites.
+3. Enviar la notificación de uso solicitada por la fuente, usando el borrador de `FUENTES.md` después de revisarlo.
+4. Ensayar con cronómetro, ejecutar la demo sin internet y comprobar que todos puedan explicar el modelo y sus límites.
 
 Estos puntos no cambian los resultados calculados. La validación parcial se conserva como hallazgo del trabajo; no debe sustituirse por una afirmación de implementación real.
 
