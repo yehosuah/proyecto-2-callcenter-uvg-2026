@@ -1,0 +1,88 @@
+{
+  "fuente": "Ilan Guedj y Avi Mandelbaum, Technion; Anonymous Bank, 1999",
+  "documentacion": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/documentation.pdf",
+  "archivos": [
+    {
+      "archivo": "NovemberTxt.ZIP",
+      "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/NovemberTxt.ZIP",
+      "sha256": "8b14fdc9e0d0bbead85575069aeea75991b9839a0ac2601f3f5b0b6b77b5094b",
+      "registros_originales": 41019,
+      "registros_incluidos": 33548,
+      "dias": 22,
+      "filtros": [
+        {
+          "criterio": "Días laborales locales: domingo a jueves",
+          "excluidos": 2895,
+          "restantes": 38124
+        },
+        {
+          "criterio": "Servicios PS, NE y NW; se excluyen IN, PE y TT",
+          "excluidos": 3939,
+          "restantes": 34185
+        },
+        {
+          "criterio": "Se excluyen llamadas PHANTOM",
+          "excluidos": 263,
+          "restantes": 33922
+        },
+        {
+          "criterio": "Solo solicitudes de agente; se excluye abandono en VRU",
+          "excluidos": 0,
+          "restantes": 33922
+        },
+        {
+          "criterio": "Entrada a cola entre 07:00 y 24:00",
+          "excluidos": 344,
+          "restantes": 33578
+        },
+        {
+          "criterio": "Duraciones válidas",
+          "excluidos": 30,
+          "restantes": 33548
+        }
+      ]
+    },
+    {
+      "archivo": "DecemberTxt.ZIP",
+      "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/DecemberTxt.ZIP",
+      "sha256": "3e3eb51e10cf1b9dd44c15d70c0a6e88b029a7420f91f9882a471f1f3558951b",
+      "registros_originales": 43065,
+      "registros_incluidos": 34015,
+      "dias": 22,
+      "filtros": [
+        {
+          "criterio": "Días laborales locales: domingo a jueves",
+          "excluidos": 3720,
+          "restantes": 39345
+        },
+        {
+          "criterio": "Servicios PS, NE y NW; se excluyen IN, PE y TT",
+          "excluidos": 4741,
+          "restantes": 34604
+        },
+        {
+          "criterio": "Se excluyen llamadas PHANTOM",
+          "excluidos": 290,
+          "restantes": 34314
+        },
+        {
+          "criterio": "Solo solicitudes de agente; se excluye abandono en VRU",
+          "excluidos": 0,
+          "restantes": 34314
+        },
+        {
+          "criterio": "Entrada a cola entre 07:00 y 24:00",
+          "excluidos": 243,
+          "restantes": 34071
+        },
+        {
+          "criterio": "Duraciones válidas",
+          "excluidos": 56,
+          "restantes": 34015
+        }
+      ]
+    }
+  ],
+  "privacidad": "Se eliminaron customer_id, call_id, vru+line y server; no se guardan archivos brutos.",
+  "uso": "La documentación permite uso gratuito, pide atribución y notificar a Avi Mandelbaum. No se ha enviado una notificación desde este proyecto."
+}

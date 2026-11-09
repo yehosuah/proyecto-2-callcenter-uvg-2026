@@ -1,0 +1,10 @@
+{
+  "curso": "CC3074 - Modelización y Simulación",
+  "universidad": "Universidad del Valle de Guatemala",
+  "fecha_entrega": "2026-11-10",
+  "integrantes": [
+    {"nombre": "Fabian Prado", "carne": "23427", "aporte_confirmado": "Pendiente de confirmar por el equipo"},
+    {"nombre": "Diego Sandoval", "carne": "231977", "aporte_confirmado": "Pendiente de confirmar por el equipo"},
+    {"nombre": "Yehosua Hercules", "carne": "241452", "aporte_confirmado": "Pendiente de confirmar por el equipo"}
+  ]
+}

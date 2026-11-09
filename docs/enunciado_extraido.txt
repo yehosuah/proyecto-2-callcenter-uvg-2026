@@ -1,0 +1,273 @@
+PÁGINA 1
+CC3074 – Modelización y Simulación | UVG 2026
+Proyecto 2 – Simulación, Optimización y Validación
+Página 1
+CC3074 – MODELIZACIÓN Y SIMULACIÓN
+PROYECTO 2
+Simulación, optimización y validación de un
+sistema real
+Universidad del Valle de Guatemala | Ciclo 2, 2026
+Característica
+Condición
+Modalidad
+Trabajo grupal; 6 grupos, máximo 5 integrantes por grupo
+Valor
+50 puntos
+Presentación
+Máximo 15 minutos por grupo, incluyendo demostración y defensa técnica
+Lenguaje
+Python recomendado; otro lenguaje permitido si se justifica
+Tema
+Libre, sujeto a viabilidad y aprobación del docente
+Fecha y medio de entrega
+Se comunicarán por el canal oficial del curso; no se fija una fecha en este documento
+Propósito
+Se debe diseñar, implementar y evaluar una solución computacional para un problema de la vida real mediante
+modelización, simulación y una técnica de optimización o inteligencia computacional investigada de forma adicional.
+Se debe demostrar mediante evidencia reproducible qué tan bien representa el modelo al escenario de referencia y
+si la propuesta mejora una métrica relevante. No se aceptan afirmaciones de mejora sin respaldo experimental.
+Instrucciones generales
+• Se debe trabajar con un escenario real claramente delimitado y un objetivo cuantificable.
+• Se debe incorporar al menos una técnica de simulación o modelización vista en clase y una técnica adicional
+investigada, o una extensión técnicamente significativa no desarrollada por completo en clase.
+• Se debe construir un escenario base y un escenario con intervención o mejora; ambos deben evaluarse con
+métricas comparables.
+• Se deben citar todas las fuentes, conjuntos de datos, herramientas y usos de inteligencia artificial; no se debe
+presentar contenido ajeno como propio.
+• Se debe entregar código ejecutable, datos autorizados, dependencias, instrucciones y resultados que permitan
+repetir los experimentos.
+• Se debe distinguir explícitamente entre datos reales observados, datos públicos de referencia, estimaciones y
+datos sintéticos.
+• Se debe conservar la misma definición de métricas y restricciones al comparar alternativas.
+• Se debe respetar el límite de 15 minutos; todos los integrantes deben participar y poder explicar el proyecto.
+
+
+PÁGINA 2
+CC3074 – Modelización y Simulación | UVG 2026
+Proyecto 2 – Simulación, Optimización y Validación
+Página 2
+Parte 1. Selección y delimitación del problema
+Enunciado. Se debe seleccionar un sistema real que presente una necesidad de análisis, predicción, asignación de
+recursos, reducción de costos, tiempos, recorridos, congestión, errores o cualquier otra medida de desempeño
+relevante.
+• Se debe identificar el contexto, los actores, las entradas y salidas del sistema.
+• Se debe formular una pregunta de investigación concreta: ¿qué se busca mejorar, estimar o comprender?
+• Se debe definir al menos una métrica principal, con unidades y sentido de mejora (maximizar o minimizar).
+• Se deben especificar alcance, restricciones, supuestos y situaciones que quedan fuera del modelo.
+• Se debe presentar al menos una fuente verificable sobre el escenario elegido.
+Parte 2. Investigación técnica
+Se debe investigar una técnica adicional apropiada para el problema, explicar sus fundamentos y justificar por qué es
+preferible a otras alternativas razonables. Pueden considerarse, entre otras, optimización multiobjetivo, colonia de
+hormigas, algoritmos genéticos con restricciones, enjambre de partículas, simulación basada en agentes, modelos
+SIR/SEIR o aprendizaje por refuerzo. Estas opciones son ejemplos y no una lista cerrada.
+• Se debe explicar el objetivo del algoritmo, su representación de soluciones, parámetros, procedimiento de
+búsqueda o actualización y criterio de terminación.
+• Se deben citar al menos tres fuentes técnicas identificables; por lo menos una debe ser documentación técnica,
+artículo académico o libro especializado.
+• Se debe justificar la pertinencia de la técnica para el problema y mencionar al menos dos limitaciones o
+condiciones en las que podría fallar.
+• Se permite usar bibliotecas, pero se debe identificar qué parte implementa la biblioteca y qué parte desarrolla el
+equipo; no basta con llamar una función y mostrar un resultado.
+Parte 3. Formulación del modelo y simulación
+• Se debe presentar un diagrama del sistema y describir la relación entre sus componentes.
+• Se deben definir variables de estado, parámetros, entradas, salidas y restricciones; cuando aplique, distribuciones
+de probabilidad, eventos o ecuaciones diferenciales.
+• Se deben escribir las reglas, fórmulas o pseudocódigo necesarios para comprender el comportamiento del modelo.
+• Se debe justificar la procedencia y el valor de los parámetros, así como la unidad de medida de cada variable
+importante.
+• Se debe implementar una simulación funcional y parametrizable, con separación clara entre modelo, simulación,
+técnica adicional y visualización.
+• Se debe documentar cómo se reproduce una ejecución desde un entorno limpio.
+Parte 4. Implementación de la mejora
+• Se debe definir formalmente la función objetivo y las restricciones de la técnica adicional.
+• Se debe mostrar cómo se integra la técnica investigada con la simulación o el modelo.
+• Se deben identificar parámetros configurables del método, su valor y su justificación.
+• Se debe generar una solución o configuración candidata y comprobar por código que satisface las restricciones
+establecidas.
+• Se debe conservar una alternativa base sin mejora, para evitar comparar solamente resultados optimizados entre
+sí.
+
+
+PÁGINA 3
+CC3074 – Modelización y Simulación | UVG 2026
+Proyecto 2 – Simulación, Optimización y Validación
+Página 3
+Parte 5. Experimentación, verificación y validación
+Se debe preparar un diseño experimental que permita responder si la solución propuesta mejora realmente el
+desempeño del modelo. Los experimentos deben ser comparables, medibles y reproducibles.
+• Se deben definir como mínimo tres condiciones o configuraciones experimentales: escenario base, propuesta
+mejorada y una variante de sensibilidad (por ejemplo, mayor demanda, menor capacidad o distinto parámetro).
+• Se deben registrar entradas, parámetros, resultados y métricas para cada condición.
+• Cuando exista aleatoriedad, se deben realizar al menos 30 repeticiones independientes por condición, registrar
+semillas y reportar promedio y dispersión; si el costo computacional impide esa cantidad, se debe justificar y aprobar
+previamente una alternativa.
+• Se debe comprobar al menos una propiedad interna del modelo mediante pruebas de consistencia, límites,
+conservación o casos conocidos.
+• Se debe comparar el comportamiento del modelo base con datos de referencia y cuantificar la diferencia mediante
+una métrica adecuada (error absoluto, relativo, MAE u otra justificada).
+• Se debe mostrar al menos una prueba de sensibilidad y explicar cómo cambian los resultados ante una variación
+relevante.
+• Se debe explicar la incertidumbre, las limitaciones y el riesgo de extrapolar los resultados fuera de las condiciones
+probadas.
+Parte 6. Comparación con un escenario de la vida real
+Se debe contrastar la simulación con un escenario documentado de la vida real. Se puede utilizar observación propia
+autorizada, datos públicos o información publicada por una fuente confiable. Si no existen mediciones reales
+accesibles, se debe presentar un caso de referencia documentado y señalar la limitación; los datos sintéticos por sí
+solos no constituyen validación contra la realidad.
+• Se debe describir la fuente, fecha, período, tamaño de muestra y condiciones de los datos de referencia cuando
+estén disponibles.
+• Se debe presentar una tabla que contraste, para las mismas métricas y unidades: referencia real, simulación base
+y simulación mejorada.
+• Se debe explicar el nivel de correspondencia entre el modelo base y el referente real antes de interpretar la
+mejora.
+• Se debe calcular el cambio absoluto y, cuando sea pertinente, el cambio porcentual respecto de la simulación base.
+• Se debe distinguir entre mejora simulada y mejora real observada; no se debe afirmar que la realidad cambió si no
+se implementó y midió la intervención.
+Ejemplo orientativo (valores hipotéticos)
+Métrica
+Referencia real
+Modelo base
+Modelo mejorado
+Espera promedio (min)
+45
+43
+28
+Interpretación
+Dato de referencia
+Aproximación inicial
+Predicción de mejora simulada
+En el ejemplo, la reducción simulada es (43 − 28) / 43 × 100 ≈ 34.9 %. Esta cifra no constituye una reducción observada
+en un establecimiento real.
+Parte 7. Resultados, discusión y conclusiones
+• Se deben incluir al menos tres visualizaciones pertinentes: comportamiento del sistema, comparación de
+escenarios y variabilidad/error o sensibilidad.
+• Cada gráfica debe tener título, ejes, unidades, leyenda cuando corresponda y explicación de lo observado.
+
+
+PÁGINA 4
+CC3074 – Modelización y Simulación | UVG 2026
+Proyecto 2 – Simulación, Optimización y Validación
+Página 4
+• Se deben presentar tablas con valores numéricos y no depender únicamente de imágenes de resultados.
+• Se debe responder explícitamente: ¿qué mejoró?, ¿cuánto mejoró?, ¿bajo qué condiciones?, ¿qué tan confiable es
+la comparación? y ¿qué limitaciones permanecen?
+• Se debe formular una conclusión respaldada por los experimentos y una recomendación concreta para el escenario
+analizado.
+Entregables y estructura de archivos
+Entregable
+Contenido mínimo
+Informe técnico PDF
+Portada, problema, objetivos, fuentes, técnica investigada, modelo, implementación, diseño
+experimental, validación, comparación real, resultados, limitaciones, conclusiones, referencias y
+contribuciones.
+Repositorio GitHub
+Código fuente, README con instrucciones reproducibles, requirements.txt o equivalente, datos
+autorizados o procedimiento para obtenerlos, y estructura organizada.
+Evidencia experimental
+Resultados tabulados, parámetros, semillas si aplican, gráficas, métricas y archivos de salida
+necesarios para verificar las conclusiones.
+Presentación
+Diapositivas y demostración funcional del sistema; máximo 15 minutos.
+Registro de contribuciones
+Resumen concreto de responsabilidades y aportes de cada integrante.
+Se debe utilizar un repositorio accesible para evaluación. Si contiene datos sensibles, se deben excluir esos datos y
+entregar una alternativa anonimizada o instrucciones de acceso autorizadas. No se deben publicar credenciales,
+información personal o datos sin permiso.
+Presentación técnica: máximo 15 minutos
+Tiempo
+Contenido
+2 min
+Problema real, objetivo y fuente de referencia
+2 min
+Modelo, variables, restricciones y supuestos
+3 min
+Técnica investigada e integración
+3 min
+Demostración del programa y ejecución
+3 min
+Resultados, validación y comparación con la vida real
+2 min
+Conclusiones, preguntas y defensa técnica
+Se debe planificar la exposición para no exceder los 15 minutos, incluyendo preguntas y demostración. Se debe
+disponer de una ejecución preparada y de evidencia reproducible como respaldo ante fallas de conexión o entorno.
+Se debe garantizar participación de todos los integrantes y dominio del funcionamiento general.
+
+
+PÁGINA 5
+CC3074 – Modelización y Simulación | UVG 2026
+Proyecto 2 – Simulación, Optimización y Validación
+Página 5
+Rúbrica de evaluación – 50 puntos
+Criterio
+Pts.
+Indicadores de evaluación
+1. Problema real y justificación
+4
+Contexto y relevancia (1); definición concreta del problema (1); objetivos medibles
+(1); fuentes y evidencia (1).
+2. Investigación de técnica adicional
+5
+Fundamento y funcionamiento (2); calidad de fuentes (1); justificación de elección
+(1); limitaciones (1).
+3. Formulación del modelo
+5
+Variables y parámetros (2); reglas o ecuaciones (1); supuestos y restricciones (1);
+coherencia del modelo (1).
+4. Simulación funcional
+7
+Ejecución verificable (3); representación coherente del sistema (2);
+parametrización (1); organización y reproducibilidad del código (1).
+5. Técnica adicional implementada
+6
+Implementación operativa (3); integración efectiva con el modelo (2); explicación
+técnica de su aplicación (1).
+6. Diseño experimental y validación
+5
+Diseño y condiciones de prueba (2); repeticiones y control de aleatoriedad cuando
+corresponda (1); verificación, error e incertidumbre (2).
+7. Comparación con escenario real
+6
+Datos o referencia documentada (2); comparación cuantitativa coherente (2);
+interpretación de diferencias (1); limitaciones y alcance de las afirmaciones (1).
+8. Resultados y conclusiones
+4
+Tablas y gráficas claras (2); conclusiones sustentadas en evidencia (2).
+9. Presentación y dominio técnico
+8
+Claridad y organización (2); demostración verificable (2); dominio y respuestas
+técnicas (3); participación y tiempo (1).
+TOTAL
+50
+Suma de los nueve criterios.
+Reglas de asignación de puntos y evidencias
+• Cada subindicador se calificará de forma independiente: puntaje completo si se demuestra satisfactoriamente,
+puntaje parcial proporcional si la evidencia es incompleta y cero si no se presenta evidencia verificable.
+• Se calificará lo efectivamente entregado y demostrado. Una técnica compleja no recibirá más puntos por su
+nombre si no funciona o no está justificada.
+• La ausencia de ejecución verificable impide otorgar los puntos de funcionamiento correspondientes; los demás
+criterios se revisarán con la evidencia disponible.
+• La comparación con datos sintéticos no identificados como tales no podrá obtener los puntos reservados a una
+referencia real documentada.
+• La nota será grupal; cualquier ajuste individual deberá sustentarse en evidencia documentada de contribución o
+dominio y comunicarse de manera justificada.
+• La entrega fuera de plazo, las normas de integridad académica y otras condiciones administrativas se regirán por
+las instrucciones publicadas en el curso y las políticas institucionales.
+Lista de verificación antes de la entrega
+• ¿Se definió un problema real con una métrica principal y fuentes verificables?
+• ¿Se investigó e implementó una técnica adicional, con justificación y limitaciones?
+• ¿El modelo describe variables, reglas, supuestos, restricciones y unidades?
+• ¿La simulación y la mejora se ejecutan desde las instrucciones del README?
+• ¿Se documentaron escenario base, mejorado y sensibilidad?
+
+
+PÁGINA 6
+CC3074 – Modelización y Simulación | UVG 2026
+Proyecto 2 – Simulación, Optimización y Validación
+Página 6
+• ¿Se verificaron resultados, incertidumbre y errores con experimentos reproducibles?
+• ¿Se incluyó una referencia real documentada y se diferenciaron datos reales de sintéticos?
+• ¿Las gráficas, tablas y conclusiones permiten verificar la mejora?
+• ¿Se entregaron informe, repositorio, evidencias, presentación y contribuciones?
+• ¿La demostración y defensa completa caben en 15 minutos?
+Criterio de claridad: se deben explicar los procedimientos y resultados de manera que puedan comprenderse sin haber
+presenciado el desarrollo del proyecto.

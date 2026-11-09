@@ -1,0 +1,19 @@
+{
+  "fecha_revision": "2026-11-08",
+  "fecha_entrega": "2026-11-10",
+  "pruebas_automatizadas": 12,
+  "verificacion_evidencia": "600 corridas; IC pareados recalculados; hashes y restricciones comprobados",
+  "demo_navegador": "Replay normal, demanda 1.4 y NHPP ejecutados; la demo reproduce la réplica guardada",
+  "informe": "18 páginas; Times New Roman 12; interlineado 1.5; márgenes de 2.54 cm; PDF exportado del Word",
+  "fuentes_pdf": [
+    "TimesNewRomanPSMT",
+    "TimesNewRomanPS-BoldMT"
+  ],
+  "presentacion": "11 diapositivas revisadas; gráficos nativos editables; fecha de entrega actualizada",
+  "pendientes": [
+    "Confirmar contribuciones reales",
+    "Publicar repositorio con acceso al docente",
+    "Confirmar aprobación docente del tema",
+    "Revisar y enviar notificación solicitada por la fuente"
+  ]
+}
