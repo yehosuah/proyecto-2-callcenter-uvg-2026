@@ -20,6 +20,14 @@ def guardar(fig,nombre):
     fig.savefig(R/f'figuras/{nombre}.pdf',facecolor='white',bbox_inches='tight');plt.close(fig)
 
 
+def escalones_horarios(horas,valores):
+    """Bordes 7..24 para dibujar con where='post': cada capacidad ocupa [h, h+1)."""
+    horas=list(horas);valores=list(valores)
+    if len(horas)!=17 or len(valores)!=17 or horas!=list(range(7,24)):
+        raise ValueError('Se requieren 17 horas de 7 a 23 con sus 17 capacidades')
+    return horas+[24],valores+[valores[-1]]
+
+
 def main():
     (R/'figuras').mkdir(exist_ok=True)
     resumen=json.loads((R/'resultados/resumen.json').read_text())
@@ -30,9 +38,10 @@ def main():
         d=df[df.fecha.str.startswith(mes)];y=d.groupby(d.llegada_s//3600).size()/d.fecha.nunique()
         axs[0].plot(np.arange(7,24),y.values,'o-',color=color,label=label,ms=4)
     axs[0].set_title('Demanda observada y distribución de capacidad');axs[0].set_ylabel('Solicitudes por hora');axs[0].legend(frameon=False)
-    axs[1].step(dot.hora,dot.base,where='mid',label='Base inferida',color=AZUL,lw=2)
-    axs[1].step(dot.hora,dot.mejorada,where='mid',label='Propuesta',color=VERDE,lw=2)
-    axs[1].set(xlabel='Hora local del call-center',ylabel='Agentes disponibles',xticks=range(7,24),ylim=(0,10));axs[1].legend(frameon=False)
+    # The engine changes capacity at whole hours; draw each level over its full hour.
+    axs[1].step(*escalones_horarios(dot.hora,dot.base),where='post',label='Base inferida',color=AZUL,lw=2)
+    axs[1].step(*escalones_horarios(dot.hora,dot.mejorada),where='post',label='Propuesta',color=VERDE,lw=2)
+    axs[1].set(xlabel='Hora local del call-center',ylabel='Agentes disponibles',xticks=range(7,25),xlim=(7,24),ylim=(0,10));axs[1].legend(frameon=False)
     guardar(fig,'01_demanda_y_capacidad')
     fig,axs=plt.subplots(1,3,figsize=(11,3.6))
     valid=pd.read_csv(R/'resultados/validacion.csv').set_index('metrica')
