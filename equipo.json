@@ -3,7 +3,7 @@
   "universidad": "Universidad del Valle de Guatemala",
   "fecha_entrega": "2026-11-10",
   "integrantes": [
-    {"nombre": "Fabian Prado", "carne": "23427", "aporte_confirmado": "Motor de simulación, experimentos y figuras: validación de entradas del motor, recocido sin movimientos factibles, métricas de cola de apertura y área total, corridas aisladas con manifiesto y escalones de dotación por hora; 13 pruebas nuevas (rama fabian/motor-y-figuras)."},
+    {"nombre": "Fabian Prado", "carne": "23427", "aporte_confirmado": "Motor de simulación, experimentos y figuras: validación de entradas del motor, recocido sin movimientos factibles, métricas de cola de apertura y área total, corridas aisladas con manifiesto y escalones de dotación por hora; 13 pruebas nuevas (rama fabian/motor-y-figuras). Integracion de la rama de Diego, informe, guion y presentacion sincronizados con la demo y exportacion de los PDF."},
     {"nombre": "Diego Sandoval", "carne": "231977", "aporte_confirmado": "Demo, verificación, informe y reproducibilidad: finales de línea para Windows, verificador e informe que toman réplicas y cifras de los resultados, respuestas JSON con códigos claros en el servidor de la demo, mensajes de error y colores en la interfaz, dependencias fijadas e instrucciones de instalación para Windows y macOS; 21 pruebas nuevas (rama diegosandoval/entrega-y-demo)."},
     {"nombre": "Yehosua Hercules", "carne": "241452", "aporte_confirmado": "Pendiente de confirmar por el equipo"}
   ]
