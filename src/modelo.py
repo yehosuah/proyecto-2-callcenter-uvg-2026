@@ -93,6 +93,10 @@ def simular(llamadas, dotacion, disponibilidad=1.0, umbral_s=120.0, traza=False)
     En empates: terminaciones, cambios de capacidad, llegadas, abandonos.
     Una terminación exactamente al vencer la paciencia permite atención.
     La capacidad final se conserva para vaciar; se informa el tiempo extra.
+
+    cola_media: solicitudes en cola promedio durante la apertura (07:00 a 24:00).
+    area_cola_s: área total de cola en llamada-segundos, incluido el vaciado;
+    coincide con la suma de esperas y sirve de comprobación de conservación.
     """
     validar_dotacion(dotacion)
     if not (math.isfinite(disponibilidad) and 0 < disponibilidad <= 1 and math.isfinite(umbral_s) and umbral_s > 0):
@@ -112,7 +116,7 @@ def simular(llamadas, dotacion, disponibilidad=1.0, umbral_s=120.0, traza=False)
     cola = []
     ocupados = en_cola = 0
     capacidad = int(dotacion[0])
-    anterior = area_cola = trabajo = trabajo_apertura = 0.0
+    anterior = area_cola = area_cola_apertura = trabajo = trabajo_apertura = 0.0
     ultimo_fin = 0.0
     historial = []
 
@@ -132,6 +136,7 @@ def simular(llamadas, dotacion, disponibilidad=1.0, umbral_s=120.0, traza=False)
     while eventos:
         t, evento, i = heapq.heappop(eventos)
         area_cola += en_cola * (t - anterior)
+        area_cola_apertura += en_cola * max(0, min(t, HORIZONTE) - min(anterior, HORIZONTE))
         trabajo += ocupados * (t - anterior)
         trabajo_apertura += ocupados * max(0, min(t, HORIZONTE) - min(anterior, HORIZONTE))
         anterior = t
@@ -171,7 +176,7 @@ def simular(llamadas, dotacion, disponibilidad=1.0, umbral_s=120.0, traza=False)
              horas_agente=sum(dotacion), trabajo_horas=trabajo/HORA,
              utilizacion_pct=100 * trabajo_apertura/(sum(dotacion)*HORA),
              extra_min=max(0, ultimo_fin-HORIZONTE)/60,
-             cola_media=area_cola/HORIZONTE)
+             cola_media=area_cola_apertura/HORIZONTE, area_cola_s=area_cola)
     salida = {"metricas": m}
     if traza:
         salida.update(traza=historial, llamadas=[dict(llegada=c.llegada, servicio=c.servicio,

@@ -103,5 +103,15 @@ class ModeloTest(unittest.TestCase):
     def test_optimizador_exige_entradas_de_ajuste(self):
         with self.assertRaises(ValueError):optimizar([2]*17,[],1,iteraciones=1)
 
+    def test_cola_media_de_apertura_y_area_total(self):
+        # Two calls one second before closing, one agent: 1 call-second queued during
+        # opening, 10 call-seconds in total (the second call waits through the drain).
+        m=simular([Llamada(61199,10,100),Llamada(61199,1,100)],[1]*17)['metricas']
+        self.assertAlmostEqual(m['area_cola_s'],10)
+        self.assertAlmostEqual(m['cola_media'],1/61200)
+        m=simular([Llamada(0,10,100),Llamada(1,5,100),Llamada(2,2,3)],[1]*17)['metricas']
+        self.assertAlmostEqual(m['area_cola_s'],12)
+        self.assertAlmostEqual(m['cola_media'],12/61200)
+
 
 if __name__=='__main__':unittest.main()
