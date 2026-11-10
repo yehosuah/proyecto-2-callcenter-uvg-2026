@@ -27,10 +27,21 @@ def validar_dotacion(dotacion, presupuesto=None, maximo=9):
     return True
 
 
+def validar_semilla(semilla):
+    if isinstance(semilla, bool) or not isinstance(semilla, (int, np.integer)) or semilla < 0:
+        raise ValueError("La semilla debe ser un entero no negativo")
+    return int(semilla)
+
+
+def validar_factores(demanda, servicio_factor):
+    if not (math.isfinite(demanda) and math.isfinite(servicio_factor)) or demanda < 0 or servicio_factor <= 0:
+        raise ValueError("Los factores de demanda y servicio deben ser finitos, con demanda >= 0 y servicio > 0")
+    return True
+
+
 def generar_llamadas(parametros, semilla, demanda=1.0, servicio_factor=1.0):
-    if demanda < 0 or servicio_factor <= 0:
-        raise ValueError("Factores fuera de rango")
-    streams = [np.random.default_rng(s) for s in np.random.SeedSequence(int(semilla)).spawn(5)]
+    validar_factores(demanda, servicio_factor)
+    streams = [np.random.default_rng(s) for s in np.random.SeedSequence(validar_semilla(semilla)).spawn(5)]
     ra, rt, rs, rp, rr = streams
     cv2 = parametros["cv2_demanda_diaria"]
     factor = ra.gamma(1 / cv2, cv2) if cv2 > 0 else 1.0
@@ -57,9 +68,8 @@ def generar_replay(dias, parametros, semilla, demanda=1.0, servicio_factor=1.0):
     Para sensibilidad, reduce entradas por thinning o agrega una superposición
     bootstrap de llegadas del mismo día. La nueva demanda es sintética.
     """
-    if demanda < 0 or servicio_factor <= 0:
-        raise ValueError('Factores inválidos')
-    ra,rs,rp,rr=[np.random.default_rng(s) for s in np.random.SeedSequence(int(semilla)).spawn(4)]
+    validar_factores(demanda, servicio_factor)
+    ra,rs,rp,rr=[np.random.default_rng(s) for s in np.random.SeedSequence(validar_semilla(semilla)).spawn(4)]
     fechas=sorted(dias)
     fecha=fechas[int(ra.integers(len(fechas)))]; filas=list(dias[fecha])
     if demanda<1:
@@ -85,8 +95,8 @@ def simular(llamadas, dotacion, disponibilidad=1.0, umbral_s=120.0, traza=False)
     La capacidad final se conserva para vaciar; se informa el tiempo extra.
     """
     validar_dotacion(dotacion)
-    if not 0 < disponibilidad <= 1 or umbral_s <= 0:
-        raise ValueError("Disponibilidad o umbral inválido")
+    if not (math.isfinite(disponibilidad) and 0 < disponibilidad <= 1 and math.isfinite(umbral_s) and umbral_s > 0):
+        raise ValueError("Disponibilidad o umbral inválido: deben ser finitos, 0 < disponibilidad <= 1 y umbral > 0")
     for c in llamadas:
         if not (0 <= c.llegada < HORIZONTE and c.servicio > 0 and c.paciencia >= 0):
             raise ValueError("Llamada fuera del horizonte o con duración inválida")
