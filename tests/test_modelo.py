@@ -86,5 +86,22 @@ class ModeloTest(unittest.TestCase):
             with self.subTest(semilla=semilla):
                 self.assertEqual(generar_llamadas(PARAMETROS,semilla),generar_llamadas(PARAMETROS,int(semilla)))
 
+    def test_optimizador_sin_movimientos_devuelve_la_base(self):
+        entradas=[[Llamada(0,1,1)]]
+        for base in [[1]*17,[9]*17]:
+            with self.subTest(base=base):
+                r=optimizar(base,entradas,1,iteraciones=1)
+                self.assertEqual(r['dotacion'],base)
+                self.assertEqual(r['costo'],r['costo_base'])
+                self.assertEqual(r['terminacion'],'sin movimientos factibles')
+                self.assertEqual(r['traza'],[])
+                self.assertEqual(r['evaluaciones'],1)
+        r=optimizar([2]*17,entradas,1,iteraciones=3)
+        self.assertEqual(r['terminacion'],'iteraciones completadas')
+        self.assertEqual(len(r['traza']),3)
+
+    def test_optimizador_exige_entradas_de_ajuste(self):
+        with self.assertRaises(ValueError):optimizar([2]*17,[],1,iteraciones=1)
+
 
 if __name__=='__main__':unittest.main()
