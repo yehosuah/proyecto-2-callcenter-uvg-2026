@@ -219,7 +219,7 @@ def main(argv=None):
         ('[5] NumPy Developers. PCG64 y SeedSequence: documentación técnica de generación reproducible.','https://numpy.org/doc/stable/reference/random/bit_generators/pcg64.html'),
         ('[6] Python Software Foundation. heapq: documentación de colas de prioridad.','https://docs.python.org/3/library/heapq.html')]
     for texto,url in refs:para(escape(texto)+'<br/><link href="'+url+'">Consultar fuente en línea</link>','Peq')
-    para('Consulta de fuentes públicas: 8 de noviembre de 2026. También se utilizaron pandas para procesar registros, Matplotlib para gráficas, SciPy para cuantiles t y python-docx para el informe en Word. El PDF se exportó desde el DOCX con LibreOffice.','Peq')
+    para('Consulta de fuentes públicas: 8 de noviembre de 2026. También se utilizaron pandas para procesar registros, Matplotlib para gráficas, SciPy para cuantiles t y python-docx para el informe en Word. El PDF se exportó desde el DOCX con Microsoft Word.','Peq')
     sub('Registro de contribuciones')
     table([['Integrante','Registro de aportes']]+[[x['nombre'],x['aporte_confirmado']] for x in eq['integrantes']],[5.1*cm,12.1*cm])
     para('El archivo docs/CONTRIBUCIONES.md permite registrar tareas realizadas, evidencia y revisión de cada integrante. El reparto del guion de exposición es una propuesta y no acredita autoría de trabajo aún no confirmado.')
