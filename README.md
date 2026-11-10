@@ -21,7 +21,16 @@ La validación externa es parcial: el modelo subestima la espera media real en 1
 
 ## Ejecutar desde un entorno limpio
 
-Entorno probado: Python 3.9.6. Las versiones exactas de las dependencias directas están en `requirements-lock.txt`; para Python más reciente puede ser necesario usar los rangos de `requirements.txt`, y comprobar nuevamente la reproducción.
+**Python 3.9, 3.10, 3.11 o 3.12.** Python 3.13 o posterior no sirve: numpy 2.0.2 no tiene paquetes para esas versiones. Versiones probadas por el equipo:
+
+| Sistema | Python | Qué se hizo |
+|---|---|---|
+| macOS (Apple Silicon) | 3.9.6 | Generación de los resultados de la entrega (`resultados/manifiesto.json`) |
+| Windows 11 | 3.11.8 | Instalación desde cero con `requirements-lock.txt`, pruebas, verificador y demo |
+
+`requirements-lock.txt` fija las 18 dependencias, directas y transitivas, con un mismo conjunto para todas esas versiones de Python, de modo que cada equipo instala exactamente lo mismo. `requirements.txt` solo declara rangos de las dependencias directas; usarlo no garantiza reproducir los resultados.
+
+**macOS o Linux:**
 
 ```bash
 git clone https://github.com/yehosuah/proyecto-2-callcenter-uvg-2026.git
@@ -29,12 +38,29 @@ cd proyecto-2-callcenter-uvg-2026
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-lock.txt
-python -m unittest discover -v
+python -m unittest discover -s tests -v
 python scripts/verificar_entrega.py
 python app.py
 ```
 
-En Windows, activar con `.venv\Scripts\activate`. Abrir `http://127.0.0.1:8765`. La demo funciona sin conexión a internet una vez instaladas las dependencias. Si el puerto está ocupado: `python app.py --port 8766`. Detener con Ctrl+C.
+**Windows (PowerShell):** si `python --version` muestra 3.13 o más, usar el lanzador `py` con una versión instalada, por ejemplo 3.11.
+
+```bash
+git clone https://github.com/yehosuah/proyecto-2-callcenter-uvg-2026.git
+cd proyecto-2-callcenter-uvg-2026
+py -3.11 -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements-lock.txt
+python -m unittest discover -s tests -v
+python scripts/verificar_entrega.py
+python app.py
+```
+
+Si PowerShell no permite ejecutar `Activate.ps1`, llamar directamente a `.venv\Scripts\python.exe` en lugar de `python`. Si el repositorio está en una carpeta sincronizada (OneDrive, iCloud), conviene crear el entorno fuera de ella, por ejemplo `py -3.11 -m venv C:\Users\<usuario>\.venvs\callcenter`, para no sincronizar miles de archivos.
+
+Resultado esperado: todas las pruebas en `OK` y el verificador empieza con `OK: 600 corridas, 60 réplicas por condición/política`. Si en Windows el verificador indica que el hash de `datos/*.csv` no coincide, el clon es anterior a `.gitattributes` y tiene finales de línea CRLF: con el árbol limpio, borrar los CSV de `datos/` y ejecutar `git checkout -- datos/`.
+
+Abrir `http://127.0.0.1:8765`. La demo funciona sin conexión a internet una vez instaladas las dependencias. Si el puerto está ocupado, la demo lo indica al iniciar; usar `python app.py --port 8766` o cerrar la otra con Ctrl+C. Para abrirla con otra corrida: `python app.py --resultados <carpeta>`.
 
 La demo usa el mismo simulador que los experimentos. Permite cambiar semilla, factor de demanda y duración de servicio. Compara ambas políticas sobre idénticas llamadas y exporta la réplica a JSON. Una ejecución individual ilustra el mecanismo; las conclusiones provienen de 60 réplicas por política y condición.
 
@@ -49,7 +75,7 @@ python informe.py
 python scripts/verificar_entrega.py
 ```
 
-El experimento completo tardó aproximadamente 77 segundos en el entorno registrado; puede variar según el equipo. Regenera parámetros, calibración, búsqueda, 600 corridas finales y validación por fecha. La calibración tiene 30 réplicas por valor; la validación adicional tiene 30 réplicas en cada uno de 22 días. Las ocho entradas usadas durante la búsqueda no sustituyen las 60 réplicas finales independientes.
+El experimento completo tarda alrededor de un minuto (`segundos_ejecucion` en el manifiesto); puede variar según el equipo. Escribe primero en `resultados.en_curso/` y solo al terminar reemplaza `resultados/`, que queda como `resultados.anterior/`; una corrida interrumpida no se presenta como completa. `--salida <carpeta>` permite correr en otra carpeta, que luego se revisa con `python scripts/verificar_entrega.py --resultados <carpeta>` y `python informe.py --resultados <carpeta> --salida <archivo.docx>`. Regenera parámetros, calibración, búsqueda, 600 corridas finales y validación por fecha. La calibración tiene 30 réplicas por valor; la validación adicional tiene 30 réplicas en cada uno de 22 días. Las ocho entradas usadas durante la búsqueda no sustituyen las 60 réplicas finales independientes.
 
 `informe.py` genera el Word; abrirlo en Microsoft Word o LibreOffice y exportar como PDF a `output/pdf/informe_call_center.pdf`. Para exportar desde una instalación local de LibreOffice:
 
@@ -93,7 +119,7 @@ La descarga comprueba los hashes esperados y se detiene si la fuente cambió. No
 | `experimentos.py` | Calibración, búsqueda, evaluación y validación |
 | `app.py`, `web/` | Demo local |
 | `scripts/` | Preparación y verificación de datos y resultados |
-| `tests/` | Casos manuales, aislamiento temporal y reproducción de demo |
+| `tests/` | Casos manuales, aislamiento temporal, reproducción de demo, rutas HTTP y coherencia de la evidencia |
 | `resultados/` | Corridas individuales, medias, dispersión, IC y manifiesto |
 | `figuras/` | Siete gráficas exportadas a PNG y PDF |
 | `informe.py`, `src/documento.py` | Contenido y formato de Word |

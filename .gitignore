@@ -5,3 +5,8 @@ tmp/
 *.zip
 *.ZIP
 *.pyc
+# Carpetas de trabajo de experimentos.py: corrida en curso y resultados reemplazados.
+*.en_curso/
+*.anterior/
+# Archivo de bloqueo que Word crea mientras el informe está abierto.
+~$*
