@@ -11,7 +11,7 @@ from src.modelo import simular,generar_llamadas,generar_replay
 ROOT=Path(__file__).resolve().parent
 
 
-def leer(nombre):return json.loads((ROOT/'resultados'/nombre).read_text())
+def leer(nombre):return json.loads((ROOT/'resultados'/nombre).read_text(encoding='utf-8'))
 
 
 def comparar(entrada):
