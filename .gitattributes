@@ -1,0 +1,12 @@
+# Finales de línea LF en todos los sistemas operativos.
+# scripts/verificar_entrega.py compara el SHA-256 de datos/*.csv con resultados/manifiesto.json;
+# con core.autocrlf=true (Windows) los CSV se convertían a CRLF y el hash dejaba de coincidir.
+* text=auto eol=lf
+
+# Archivos binarios: nunca convertir.
+*.png binary
+*.pdf binary
+*.docx binary
+*.ttf binary
+*.zip binary
+*.ZIP binary
