@@ -1,7 +1,52 @@
 {
-  "python": "3.9.6",
-  "numpy": "2.0.2",
-  "pandas": "2.3.3",
+  "estado": "completa",
+  "inicio": "2026-11-10T03:10:01+00:00",
+  "configuracion": {
+    "repeticiones": 60,
+    "iteraciones": 400,
+    "salida": "/Users/fabianprado/Documents/projects/2026 - 2 /modelacion/proyecto-2-callcenter-uvg-2026/resultados",
+    "escenarios": [
+      {
+        "nombre": "demanda_80",
+        "factor_demanda": 0.8,
+        "factor_servicio": 1.0
+      },
+      {
+        "nombre": "normal",
+        "factor_demanda": 1.0,
+        "factor_servicio": 1.0
+      },
+      {
+        "nombre": "demanda_120",
+        "factor_demanda": 1.2,
+        "factor_servicio": 1.0
+      },
+      {
+        "nombre": "demanda_140",
+        "factor_demanda": 1.4,
+        "factor_servicio": 1.0
+      },
+      {
+        "nombre": "servicio_115",
+        "factor_demanda": 1.0,
+        "factor_servicio": 1.15
+      }
+    ],
+    "temperatura_inicial": 2.0,
+    "temperatura_final": 0.02
+  },
+  "versiones": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "plataforma": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "codigo": {
+    "commit": "eba6c56c3e7aedc62dc5e548d8334cdf4075ab5e",
+    "rama": "fabian/motor-y-figuras",
+    "cambios_sin_confirmar": false
+  },
   "semillas_calibracion": [
     10000,
     10001,
@@ -112,8 +157,12 @@
     100059
   ],
   "semillas_validacion_diaria": "200000 + 30 * indice_dia + repeticion (0..29)",
+  "fin": "2026-11-10T03:11:00+00:00",
+  "python": "3.9.6",
+  "numpy": "2.0.2",
+  "pandas": "2.3.3",
   "iteraciones": 400,
-  "segundos_ejecucion": 76.85,
+  "segundos_ejecucion": 59.73,
   "definicion_ic": "Student t 95% entre réplicas; diferencias pareadas. Condicional a parámetros y distribución empírica de días de diciembre.",
   "hashes_datos": {
     "concurrencia_observada.csv": "848533cb78745a9ad2e65f5c9210980c16596fb06ca1473499170794757f0546",

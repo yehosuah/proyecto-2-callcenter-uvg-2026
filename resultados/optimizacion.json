@@ -62,7 +62,8 @@
       ],
       "semilla": 7301,
       "iteraciones": 400,
-      "evaluaciones": 382
+      "evaluaciones": 382,
+      "terminacion": "iteraciones completadas"
     },
     {
       "dotacion": [
@@ -126,7 +127,8 @@
       ],
       "semilla": 7302,
       "iteraciones": 400,
-      "evaluaciones": 386
+      "evaluaciones": 386,
+      "terminacion": "iteraciones completadas"
     },
     {
       "dotacion": [
@@ -190,7 +192,8 @@
       ],
       "semilla": 7303,
       "iteraciones": 400,
-      "evaluaciones": 388
+      "evaluaciones": 388,
+      "terminacion": "iteraciones completadas"
     }
   ],
   "seleccionada": [
