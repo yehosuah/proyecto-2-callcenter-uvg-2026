@@ -14,7 +14,7 @@ La validación externa es parcial: el modelo subestima la espera media real en 1
 
 - [Informe PDF](output/pdf/informe_call_center.pdf).
 - [Word editable](output/word/informe_call_center.docx), Times New Roman 12, interlineado 1,5.
-- [Presentación editable en Spaces](https://chatgpt.com/space/page_bfc0c11534e881918dd52bd4d84631d5); su acceso se administra por separado del repositorio.
+- [Presentación](output/presentacion/presentacion_call_center_entrega.pptx) y su [PDF](output/presentacion/presentacion_call_center_entrega.pdf); las notas de cada diapositiva repiten el guion. Versión editable también en [Spaces](https://chatgpt.com/space/page_bfc0c11534e881918dd52bd4d84631d5), con acceso administrado por separado.
 - [Guion y defensa](docs/GUION.md).
 - [Rúbrica y pendientes](docs/ENTREGA.md).
 - [Contribuciones por confirmar](docs/CONTRIBUCIONES.md).
@@ -123,6 +123,7 @@ La descarga comprueba los hashes esperados y se detiene si la fuente cambió. No
 | `resultados/` | Corridas individuales, medias, dispersión, IC y manifiesto |
 | `figuras/` | Siete gráficas exportadas a PNG y PDF |
 | `informe.py`, `src/documento.py` | Contenido y formato de Word |
+| `output/` | Informe en Word y PDF, presentación en PPTX y PDF |
 
 ## Atribución y uso de IA
 
