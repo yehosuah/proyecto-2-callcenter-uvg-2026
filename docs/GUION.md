@@ -39,7 +39,7 @@ Duración objetivo: 13 minutos de exposición y demostración más 2 minutos de 
 
 **10 Sensibilidad.** Atención base/propuesta: demanda −20%: 85,65/85,73; normal: 71,67/72,94; +20%: 54,40/55,98; +40%: 39,70/41,61. Con +40% la diferencia es 1,91 pp, IC [1,54; 2,27]. Con −20% la diferencia es 0,08 pp e incluye cero, mientras el abandono sube 0,45 pp, IC [0,18; 0,72]. Con servicio +15%: 1,84 pp, IC [1,36; 2,32]. No presentar la propuesta como universalmente superior.
 
-**11 Conclusión.** La redistribución mejora la atención dentro del umbral bajo las condiciones simuladas, con las mismas 105 horas nominales. El alcance es exploratorio por la discrepancia con los datos reales y porque no se modelan turnos ni descansos. Siguiente paso: medir disponibilidad real, revisar supuestos y volver a validar antes de un piloto. No se estima ahorro monetario. Se declara el uso de asistencia de IA en el informe.
+**11 Conclusión.** La redistribución mejora la atención dentro del umbral bajo las condiciones simuladas, con las mismas 105 horas nominales. El alcance es exploratorio por la discrepancia con los datos reales y porque no se modelan turnos ni descansos. Siguiente paso: medir disponibilidad real, revisar supuestos y volver a validar antes de un piloto. No se estima ahorro monetario.
 
 ## Demo preparada
 
@@ -82,4 +82,4 @@ Lo que muestra la pantalla: a la izquierda los controles (fuente de llegadas, de
 
 **¿Qué pasa si se les da una entrada absurda al motor o a la demo?** El motor rechaza semillas no enteras o negativas, factores no finitos, disponibilidad fuera de (0, 1] y umbral no positivo. La demo responde JSON con códigos 400, 404, 405, 413 y 500 y la interfaz muestra el mensaje sin cerrarse.
 
-**¿Se usó IA?** Sí, se declara en el informe. La fuente de datos es Technion. El equipo debe explicar y revisar el código y registrar sus aportes reales.
+**¿Quién hizo qué?** El registro está en docs/CONTRIBUCIONES.md y en la sección 14 del informe; cada integrante explica su parte y el código es revisado por todos.

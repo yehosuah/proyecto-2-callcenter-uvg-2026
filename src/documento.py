@@ -119,6 +119,7 @@ class InformeWord:
             self.para(x['nombre']+' — '+x['carne']).alignment=WD_ALIGN_PARAGRAPH.CENTER
         self.doc.add_paragraph();self.doc.add_paragraph()
         self.para('10 de noviembre de 2026').alignment=WD_ALIGN_PARAGRAPH.CENTER
+        self.para('<link href="https://github.com/yehosuah/proyecto-2-callcenter-uvg-2026">github.com/yehosuah/proyecto-2-callcenter-uvg-2026</link>').alignment=WD_ALIGN_PARAGRAPH.CENTER
         self.doc.add_page_break()
 
     def guardar(self,path):

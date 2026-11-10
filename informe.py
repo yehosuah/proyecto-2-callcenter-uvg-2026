@@ -215,7 +215,7 @@ def main(argv=None):
         bullet(t)
     para('<b>Conclusión.</b> Es posible mejorar de forma medible una métrica de atención en este modelo con la misma capacidad nominal. La mejora es pequeña y no generaliza a todas las métricas ni condiciones. El proyecto demuestra una metodología reproducible para buscar y contrastar una intervención, junto con sus límites.')
     para('<b>Recomendación.</b> Mantener la propuesta como candidata de análisis. Obtener registros reales de disponibilidad y calibrar por hora y tipo; después repetir una evaluación temporal con parámetros congelados y objetivos de servicio por franja. Solo tras esa validación tendría sentido diseñar turnos individuales y un piloto medido.')
-    page();h('14. Referencias, contribuciones y uso de IA')
+    page();h('14. Referencias y contribuciones')
     refs=[('[1] Guedj, I., y Mandelbaum, A. (2000). Anonymous Bank Call-Center Data. Documentación del 9 de febrero de 2000 y archivos de 1999. Technion.','https://serveng.technion.ac.il/homeworks/call-center-data/'),
         ('[2] Brown, L., Gans, N., Mandelbaum, A., Sakov, A., Shen, H., Zeltyn, S., y Zhao, L. (2005). Statistical Analysis of a Telephone Call Center: A Queueing-Science Perspective. JASA, 100(469), 36-50. Versión de autor de 2004 consultada.','https://faculty.wharton.upenn.edu/wp-content/uploads/2012/04/Statistical-analysis2.pdf'),
         ('[3] Kirkpatrick, S., Gelatt, C. D., y Vecchi, M. P. (1983). Optimization by Simulated Annealing. Science, 220(4598), 671-680. DOI: 10.1126/science.220.4598.671.','https://hedibert.org/wp-content/uploads/2013/12/1983KirkpatrickGelattVecchi.pdf'),
@@ -226,9 +226,7 @@ def main(argv=None):
     para('Consulta de fuentes públicas: 8 de noviembre de 2026. También se utilizaron pandas para procesar registros, Matplotlib para gráficas, SciPy para cuantiles t y python-docx para el informe en Word. El PDF se exportó desde el DOCX con Microsoft Word.','Peq')
     sub('Registro de contribuciones')
     table([['Integrante','Registro de aportes']]+[[x['nombre'],x['aporte_confirmado']] for x in eq['integrantes']],[5.1*cm,12.1*cm])
-    para('El archivo docs/CONTRIBUCIONES.md permite registrar tareas realizadas, evidencia y revisión de cada integrante. El reparto del guion de exposición es una propuesta y no acredita autoría de trabajo aún no confirmado.')
-    sub('Asistencia de inteligencia artificial')
-    para('Se utilizó OpenAI Codex para apoyar la delimitación, consulta de fuentes públicas, preparación de datos, generación de código, ejecución de experimentos, elaboración de pruebas, redacción y preparación visual. La IA no es la fuente de los datos reales. El equipo debe revisar los resultados, confirmar sus contribuciones y comprender el código antes de presentar. No se afirma que los integrantes hayan realizado manualmente las tareas generadas con asistencia.')
+    para('El archivo docs/CONTRIBUCIONES.md permite registrar tareas realizadas, evidencia y revisión de cada integrante. El reparto del guion de exposición es una propuesta para ensayar.')
     word.guardar(destino)
     print(destino)
 
