@@ -3,20 +3,8 @@
   "universidad": "Universidad del Valle de Guatemala",
   "fecha_entrega": "2026-11-10",
   "integrantes": [
-    {
-      "nombre": "Fabian Prado",
-      "carne": "23427",
-      "aporte_confirmado": "Motor de simulación, experimentos y figuras: validación de entradas del motor, recocido sin movimientos factibles, métricas de cola de apertura y área total, corridas aisladas con manifiesto y escalones de dotación por hora; 13 pruebas nuevas (rama fabian/motor-y-figuras)."
-    },
-    {
-      "nombre": "Diego Sandoval",
-      "carne": "231977",
-      "aporte_confirmado": "Pendiente de confirmar por el equipo"
-    },
-    {
-      "nombre": "Yehosua Hercules",
-      "carne": "241452",
-      "aporte_confirmado": "Pendiente de confirmar por el equipo"
-    }
+    {"nombre": "Fabian Prado", "carne": "23427", "aporte_confirmado": "Motor de simulación, experimentos y figuras: validación de entradas del motor, recocido sin movimientos factibles, métricas de cola de apertura y área total, corridas aisladas con manifiesto y escalones de dotación por hora; 13 pruebas nuevas (rama fabian/motor-y-figuras)."},
+    {"nombre": "Diego Sandoval", "carne": "231977", "aporte_confirmado": "Pendiente de confirmar por el equipo"},
+    {"nombre": "Yehosua Hercules", "carne": "241452", "aporte_confirmado": "Pendiente de confirmar por el equipo"}
   ]
 }
